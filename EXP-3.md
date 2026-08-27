@@ -1,40 +1,54 @@
-# Aim:
-To obtain Pulse Amplitude Modulation & Demodulation using trainer kit.
+# AIM:
+To implement ASK, FSK, BPSK using MATLAB.
 
-# THEORY
-In Pulse Amplitude Modulation, the signal is sampled at regular intervals and the amplitude of each sample is made proportional to the amplitude of the signal at that instant of sampling. This amplitude of each sample is hold for the sample duration to make pulses flat top.
-The Pulse Amplitude Demodulator consists of Active Low Pass Butterworth Filler. It filters out the sampling frequency and their harmonics from the modulated signal and recovers the base band by integratedaction
+# SOFTWARE REQUIRED:
+MATLAB
 
-# EQUIPMENTS
-Experimental kit DCL -08 Connecting chords
-Power supply
-20 MHz Dual trace oscilloscope
-NOTE: Keep The Switch Faults In Off Position.
-
-# PROCEDURE
-Refer to the block diagram (Fig. 1) and carry out the following connections and switch settings.
-ConnectthePower Supply withproperpolaritytothekit DCL-08 andswitch it on. Select 16KHZ sampling frequency by jumper JP1.
-Connect the1KHz,2Vp-psinewavesignalgenerated onboardtoPAM in post.
-Shortthe followingposts with the Connecting chords provided as shown in diagram. PAM OUT and AMP IN
-AMP OUT and FIL IN.
-Keep the amplifier gain control potentiometer PS to maximum completely clockwise. Observe the Pulse Amplitude Demodulated signal at FIL OUT, which is same as the input signal. Repeat the experiment for different input signal and sampling frequencies.
  
-# SWITCH FAULTS;
-Note: Keep the connections as per the procedure.
-Now switch corresponding fault switch button in ON condition & observe the different effect onthe output. The faults are normally used one at a time. Put Switch 1 of SF1 in Switch Fault section to ON position. The feedback resistor isbypassed from Amplifiersection. Gainof Amplifiernowdepends on potentiometer P5 only Put switch 2 of SF1 in Switch Fault section to ON position. This will generate twomixedsinewaves, whichcouldbeused as a modulatinginput signal for modulators PAM, PWM and PPM. Put switch 3 of SF1 in Switch Fault section to ON position. This willbypass one filter from filter section. The output consists of ripple with reference to previous output without switch fault. Put switch 4 of SF1 in Switch Fault section to ON position. This provides constant high sampling signal to the sampling switch, which in turn gives natural sampling at the output. Put switch 5 of SF2 in Switch Fault section to ON position. This removes the control signal of first switch of PAM section, this will open pin of CMOS IC. Due to this output will be abrupt or may follow the input.
+# PROGRAM:
+clc;
 
-# BLOCK DIAGRAM:
-<img width="845" height="1079" alt="image" src="https://github.com/user-attachments/assets/48412fdd-c336-482a-a5ab-1ba686556188" />
+t=0:0.0001:0.15;
 
-# Tabulation:
+m = square(2pi20*t);
 
-# MODEL GRAPH:
-<img width="599" height="798" alt="image" src="https://github.com/user-attachments/assets/3841e33a-12a4-4fc3-b67b-41285af5878d" />
+c = sin(2pi80*t);
 
-# OUTPUT GRAPH:
+y1=(m.*c);
 
-# Result:
-Thus the pulse amplitude modulated and demodulated signals is generated and output is verified.
+for i = 1:1500
 
+if(m(i)==1)
 
+    y1(i)=c(i);
+    
+else
+
+    y1(i)=0;
+    
+end
+end
+
+figure(1)
+
+subplot(3,1,1);
+
+plot(m);
+
+subplot(3,1,2);
+
+plot(c);
+
+subplot(3,1,3);
+
+plot(y1);
+
+# OUTPUT:
+
+<img width="765" height="515" alt="image" src="https://github.com/user-attachments/assets/f4975098-057c-49c0-bd49-aa7e5c2561e8" />
+
+# RESULT:
+Thus, generation of ASK was implemented using MATLAB.
+
+ 
 
