@@ -1,87 +1,55 @@
 # AIM:
-To implement FSK using MATLAB.
+To implement ASK using MATLAB.
 
 # SOFTWARE REQUIRED:
 MATLAB
 
+ 
 # PROGRAM:
+
 clc;
 
-clear;
+t=0:0.0001:0.15;
 
-close all;
+m = square(2*pi*20*t);
 
-t = 0:0.0001:0.15;
+c = sin(2*pi*80*t);
 
-m = square(2*pi*10*t);
+y1=(m.*c);
 
-c1 = sin(2*pi*60*t);
+for i = 1:1500
 
-c2 = sin(2*pi*120*t);
-
-s1 = zeros(size(t));
-
-for i = 1:length(t)
-
-    if m(i) == 1
+    if(m(i)==1)
     
-        s1(i) = c1(i);
+        y1(i)=c(i);
         
     else
     
-        s1(i) = c2(i);
+        y1(i)=0;
         
     end
     
 end
 
-figure;
+figure(1)
 
-subplot(4,1,1);
+subplot(3,1,1);
 
-plot(t,m);
+plot(m);
 
-xlabel('Time (s)');
+subplot(3,1,2);
 
-ylabel('Amplitude');
+plot(c);
 
-title('Message Signal');
+subplot(3,1,3);
 
-subplot(4,1,2);
-
-plot(t,c1);
-
-xlabel('Time (s)');
-
-ylabel('Amplitude');
-
-title('Carrier 1 (60 Hz)');
-
-subplot(4,1,3);
-
-plot(t,c2);
-
-xlabel('Time (s)');
-
-ylabel('Amplitude');
-
-title('Carrier 2 (120 Hz)');
-
-subplot(4,1,4);
-
-plot(t,s1);
-
-xlabel('Time (s)');
-
-ylabel('Amplitude');
-
-title('BFSK Modulated Output');
+plot(y1);
 
 # OUTPUT:
-<img width="838" height="608" alt="image" src="https://github.com/user-attachments/assets/1c58c78b-5276-44af-ad21-cee33eb6c871" />
+<img width="765" height="515" alt="image" src="https://github.com/user-attachments/assets/f4975098-057c-49c0-bd49-aa7e5c2561e8" />
 
 # RESULT:
-Thus, generation of FSK was implemented using MATLAB.
+Thus, generation of ASK was implemented using MATLAB.
 
-
+ 
 
