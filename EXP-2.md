@@ -26,8 +26,11 @@ Connect the oscilloscope to the output of the modulator RN/RE.
 <img width="333" height="571" alt="image" src="https://github.com/user-attachments/assets/55e71b4a-206f-4db6-9e66-9e1366335449" />
 
 # OUTPUT GRAPH: 
+<img width="1214" height="1599" alt="image" src="https://github.com/user-attachments/assets/db9ce938-66df-470e-b0bb-7a90c18ac2cb" />
+
 
 # TABULATION:
+<img width="1280" height="963" alt="WhatsApp Image 2026-09-09 at 10 26 06 PM" src="https://github.com/user-attachments/assets/5fbd356d-be04-4f5f-a3ea-6b883decefe6" />
 
 
 # RESULT:
